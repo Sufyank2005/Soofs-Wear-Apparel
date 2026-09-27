@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
 <title>Sign Up - Soof's Wear Apparel</title>
 
 <!-- Bootstrap CSS CDN -->
@@ -13,6 +14,7 @@
 
 <!-- External CSS -->
 <link rel="stylesheet" href="style.css">
+
 
 </head>
 
@@ -38,13 +40,11 @@
 <main>
 
     <section class="welcome">
-
         <h2>Create Your Account</h2>
 
         <p>
             Sign up for Soof's Wear Apparel.
         </p>
-
     </section>
 
 
@@ -61,7 +61,7 @@
                         User Sign-Up
                     </h3>
 
-                    <form>
+                    <form id="signupForm" onsubmit="return validateForm()">
 
                         <!-- Username -->
                         <div class="mb-3">
@@ -75,7 +75,9 @@
                                 id="username"
                                 name="username"
                                 placeholder="Enter your username"
-                                required>
+                                onfocusout="validate(this)">
+
+                            <div id="usernameError" class="error-message"></div>
                         </div>
 
 
@@ -86,12 +88,14 @@
                             </label>
 
                             <input
-                                type="email"
+                                type="text"
                                 class="form-control"
                                 id="email"
                                 name="email"
                                 placeholder="Enter your email"
-                                required>
+                                onfocusout="validate(this)">
+
+                            <div id="emailError" class="error-message"></div>
                         </div>
 
 
@@ -107,7 +111,9 @@
                                 id="password"
                                 name="password"
                                 placeholder="Enter your password"
-                                required>
+                                onfocusout="validate(this)">
+
+                            <div id="passwordError" class="error-message"></div>
                         </div>
 
 
@@ -123,7 +129,9 @@
                                 id="confirmPassword"
                                 name="confirmPassword"
                                 placeholder="Confirm your password"
-                                required>
+                                onfocusout="validate(this)">
+
+                            <div id="confirmPasswordError" class="error-message"></div>
                         </div>
 
 
@@ -149,16 +157,134 @@
 
 <!-- FOOTER -->
 <footer>
-
     <p>
         &copy; 2026 Soof's Wear Apparel
     </p>
-
 </footer>
 
 
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- INTERNAL JAVASCRIPT -->
+<script>
+
+    // Validates an individual input field
+    function validate(obj) {
+
+        // Remove the previous error message
+        let errorMessage = document.getElementById(obj.id + "Error");
+
+        errorMessage.textContent = "";
+
+        // Reset textbox color
+        obj.style.color = "#222";
+
+        // Username validation
+        if (obj.id === "username") {
+
+            if (obj.value.trim() === "") {
+                obj.style.color = "#FF0000";
+                errorMessage.textContent = "Username is required.";
+                errorMessage.style.color = "#FF0000";
+                return false;
+            }
+        }
+
+
+        // Email validation
+        if (obj.id === "email") {
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (obj.value.trim() === "") {
+                obj.style.color = "#FF0000";
+                errorMessage.textContent = "Email is required.";
+                errorMessage.style.color = "#FF0000";
+                return false;
+            }
+
+            if (!emailPattern.test(obj.value)) {
+                obj.style.color = "#FF0000";
+                errorMessage.textContent = "Please enter a valid email such as joe@test.com.";
+                errorMessage.style.color = "#FF0000";
+                return false;
+            }
+        }
+
+
+        // Password validation
+        if (obj.id === "password") {
+
+            if (obj.value.trim() === "") {
+                obj.style.color = "#FF0000";
+                errorMessage.textContent = "Password is required.";
+                errorMessage.style.color = "#FF0000";
+                return false;
+            }
+        }
+
+
+        // Confirm Password validation
+        if (obj.id === "confirmPassword") {
+
+            let password = document.getElementById("password").value;
+
+            if (obj.value.trim() === "") {
+                obj.style.color = "#FF0000";
+                errorMessage.textContent = "Please confirm your password.";
+                errorMessage.style.color = "#FF0000";
+                return false;
+            }
+
+            if (obj.value !== password) {
+                obj.style.color = "#FF0000";
+                errorMessage.textContent = "Passwords do not match.";
+                errorMessage.style.color = "#FF0000";
+                return false;
+            }
+        }
+
+
+        // Valid input
+        obj.style.color = "#222";
+        errorMessage.textContent = "";
+
+        return true;
+    }
+
+
+    // Validates all fields when the form is submitted
+    function validateForm() {
+
+        let username = document.getElementById("username");
+        let email = document.getElementById("email");
+        let password = document.getElementById("password");
+        let confirmPassword = document.getElementById("confirmPassword");
+
+        let usernameValid = validate(username);
+        let emailValid = validate(email);
+        let passwordValid = validate(password);
+        let confirmPasswordValid = validate(confirmPassword);
+
+        // Prevent form submission if any field is invalid
+        if (!usernameValid ||
+            !emailValid ||
+            !passwordValid ||
+            !confirmPasswordValid) {
+
+            return false;
+        }
+
+        // All fields are valid
+        alert("Sign-up information is valid!");
+
+        return false;
+    }
+
+</script>
+
 
 </body>
 

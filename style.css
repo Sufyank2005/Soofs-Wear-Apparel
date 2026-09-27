@@ -187,3 +187,9 @@ footer {
 footer p {
     margin: 0;
 }
+/* FORM VALIDATION ERROR MESSAGES */
+
+.error-message {
+    margin-top: 5px;
+    font-size: 14px;
+}
