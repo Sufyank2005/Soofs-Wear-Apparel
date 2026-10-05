@@ -177,14 +177,16 @@
 
         errorMessage.textContent = "";
 
-        // Reset textbox color
+        // Reset textbox color and border
         obj.style.color = "#222";
+        obj.style.border = "";
 
         // Username validation
         if (obj.id === "username") {
 
             if (obj.value.trim() === "") {
                 obj.style.color = "#FF0000";
+                obj.style.border = "2px solid #FF0000";
                 errorMessage.textContent = "Username is required.";
                 errorMessage.style.color = "#FF0000";
                 return false;
@@ -199,6 +201,7 @@
 
             if (obj.value.trim() === "") {
                 obj.style.color = "#FF0000";
+                obj.style.border = "2px solid #FF0000";
                 errorMessage.textContent = "Email is required.";
                 errorMessage.style.color = "#FF0000";
                 return false;
@@ -206,6 +209,7 @@
 
             if (!emailPattern.test(obj.value)) {
                 obj.style.color = "#FF0000";
+                obj.style.border = "2px solid #FF0000";
                 errorMessage.textContent = "Please enter a valid email such as joe@gmail.com.";
                 errorMessage.style.color = "#FF0000";
                 return false;
@@ -218,6 +222,7 @@
 
             if (obj.value.trim() === "") {
                 obj.style.color = "#FF0000";
+                obj.style.border = "2px solid #FF0000";
                 errorMessage.textContent = "Password is required.";
                 errorMessage.style.color = "#FF0000";
                 return false;
@@ -232,6 +237,7 @@
 
             if (obj.value.trim() === "") {
                 obj.style.color = "#FF0000";
+                obj.style.border = "2px solid #FF0000";
                 errorMessage.textContent = "Please confirm your password.";
                 errorMessage.style.color = "#FF0000";
                 return false;
@@ -239,6 +245,7 @@
 
             if (obj.value !== password) {
                 obj.style.color = "#FF0000";
+                obj.style.border = "2px solid #FF0000";
                 errorMessage.textContent = "Passwords do not match.";
                 errorMessage.style.color = "#FF0000";
                 return false;
@@ -248,6 +255,7 @@
 
         // Valid input
         obj.style.color = "#222";
+        obj.style.border = "";
         errorMessage.textContent = "";
 
         return true;
