@@ -144,6 +144,14 @@
 
                     </form>
 
+
+                    <!-- JSON OUTPUT -->
+                    <div class="mt-4">
+                        <h4>JSON Shopper Document</h4>
+
+                        <pre id="jsonOutput"></pre>
+                    </div>
+
                 </div>
 
             </div>
@@ -284,9 +292,25 @@
             return false;
         }
 
-        // All fields are valid
-        alert("Sign-up information is valid!");
 
+        // Create JSON object using the form field values
+        let shopper = {
+            username: username.value,
+            email: email.value,
+            password: password.value,
+            confirmPassword: confirmPassword.value
+        };
+
+
+        // Convert the JavaScript object into a JSON document
+        let jsonDocument = JSON.stringify(shopper, null, 4);
+
+
+        // Display the JSON document on the webpage
+        document.getElementById("jsonOutput").textContent = jsonDocument;
+
+
+        // Prevent the page from refreshing
         return false;
     }
 
