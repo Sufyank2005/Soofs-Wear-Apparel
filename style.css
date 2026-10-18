@@ -1,3 +1,4 @@
+
 /* External CSS */
 
 /* BASIC PAGE SETTINGS */
@@ -187,9 +188,114 @@ footer {
 footer p {
     margin: 0;
 }
+
+
 /* FORM VALIDATION ERROR MESSAGES */
 
 .error-message {
     margin-top: 5px;
     font-size: 14px;
+}
+
+
+/* =========================================
+   PRODUCT MANAGEMENT PAGE
+   CSS Styling: Zuhan Kabeer
+   ========================================= */
+
+.product-page {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.product-form-container,
+.product-search-section {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.product-form-container h2,
+.product-search-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.product-page .form-label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.product-page .form-control,
+.product-page .form-select {
+    width: 100%;
+}
+
+.product-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px;
+}
+
+.product-button:hover {
+    background-color: #419645;
+    color: white;
+}
+
+.json-output {
+    display: block;
+    width: 100%;
+    min-height: 150px;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #222;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-size: 14px;
+}
+
+#formMessage,
+#searchMessage {
+    overflow-wrap: anywhere;
+}
+
+
+/* PRODUCT PAGE RESPONSIVE DESIGN */
+
+@media (max-width: 700px) {
+    .products {
+        flex-direction: column;
+    }
+
+    .product-page {
+        grid-template-columns: 1fr;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    nav a {
+        margin: 5px 8px;
+    }
 }
