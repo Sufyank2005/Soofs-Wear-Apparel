@@ -28,6 +28,7 @@ header h1 {
     margin: 0;
     font-size: 36px;
     letter-spacing: 2px;
+    font-weight: bold;
 }
 
 header p {
