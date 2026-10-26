@@ -309,15 +309,15 @@ footer p {
 
 .cart-icon {
     position: absolute;
-    top: 30px;
-    right: 35px;
-    color: white;
+    top: 20px;
+    right: 25px;
+    color: white !important;
     font-size: 30px;
     text-decoration: none;
 }
 
 .cart-icon:hover {
-    color: #cccccc;
+    color: #cccccc !important;
 }
 
 /* SHOPPING CART PAGE */
