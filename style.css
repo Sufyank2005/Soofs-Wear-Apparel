@@ -300,3 +300,129 @@ footer p {
         margin: 5px 8px;
     }
 }
+
+/* SHOPPING CART HEADER ICON */
+
+.store-header {
+    position: relative;
+}
+
+.cart-icon {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.cart-icon:hover {
+    color: #cccccc;
+}
+
+/* SHOPPING CART PAGE */
+
+.shopping-cart-page {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.shopping-cart-page h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.cart-selection {
+    padding: 20px;
+    background-color: #f4f1ed;
+    border-radius: 5px;
+}
+
+.cart-selection .form-label {
+    font-weight: bold;
+}
+
+.shopping-cart-page .table {
+    margin-top: 20px;
+}
+
+.shopping-cart-page .table thead th {
+    background-color: #e4ddd5;
+    font-weight: bold;
+}
+
+.cart-quantity {
+    width: 100px;
+    min-width: 75px;
+}
+
+.shopping-cart-page .btn-primary {
+    background-color: #111;
+    border-color: #111;
+}
+
+.shopping-cart-page .btn-primary:hover {
+    background-color: #444;
+    border-color: #444;
+}
+
+.shopping-cart-page .btn-success {
+    background-color: #238636;
+    border-color: #238636;
+}
+
+.shopping-cart-page .btn-success:hover {
+    background-color: #19692a;
+}
+
+.cart-json-section {
+    background-color: #f4f1ed;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.cart-json-section h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.cart-json-section .json-output {
+    margin-bottom: 0;
+    max-height: 400px;
+    overflow: auto;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 700px) {
+    .cart-icon {
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+    }
+
+    .shopping-cart-page {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .shopping-cart-page h2 {
+        font-size: 26px;
+    }
+
+    .cart-selection {
+        padding: 15px;
+    }
+
+    .shopping-cart-page .table {
+        font-size: 13px;
+    }
+
+    .cart-quantity {
+        width: 75px;
+    }
+}
